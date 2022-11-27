@@ -25,9 +25,9 @@
     <div class="card-body">
       <!-- <p class="login-box-msg">Sign in to start your session</p> -->
 
-      <form action="https://adminlte.io/themes/v3/index3.html" method="post">
+      <form>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Phone">
+          <input id="phone_number" type="text" class="form-control" placeholder="Phone">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-phone"></span>
@@ -35,7 +35,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input id="password" type="password" class="form-control" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -45,7 +45,7 @@
         <div class="row">
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <button type="button" class="btn btn-primary btn-block" id="btn-login" onclick="loginPassword()">Login</button>
           </div>
           <!-- /.col -->
         </div>
@@ -79,17 +79,25 @@
                 <label for="inputEmail3" class="col-sm-2 col-form-label">Phone</label>
                 <div class="col-sm-10">
                   <div class="input-group input-group-sm">
-                    <input type="text" class="form-control">
+                    <input id="phone_number" type="text" class="form-control">
                     <span class="input-group-append">
-                      <button type="button" class="btn btn-info btn-flat">Request</button>
+                      <button type="button" class="btn btn-info btn-flat" onclick="loginRequestOtp()" id="btn-request-otp">
+                        Request
+                      </button>
                     </span>
                   </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" id="pesan-request-otp">
+                  
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Kode OTP</label>
                 <div class="col-sm-10">
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="x x x x x x">
+                  <input type="password" class="form-control form-control-sm" id="otp" placeholder="x x x x x x">
                 </div>
               </div>
             </div>
@@ -97,7 +105,7 @@
           </form>
         </div>
         <div class="modal-footer justify-content-between">
-          <button type="button" class="btn btn-default">Submit</button>
+          <button type="button" class="btn btn-default" id="btn-otp-confirm" onclick="loginOtpConfirm()">Verify</button>
         </div>
       </div>
       <!-- /.modal-content -->
@@ -113,5 +121,6 @@
 <script src="https://adminlte.io/themes/v3/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="https://adminlte.io/themes/v3/dist/js/adminlte.min.js"></script>
+<script src="login.js"></script>
 </body>
 </html>
