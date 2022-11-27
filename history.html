@@ -51,12 +51,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </a>
           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <a href="#" class="dropdown-item">
-              <h4 class="profile-username text-center">083872990822</h4>
+              <h4 class="profile-username text-center" id="profile-username">-</h4>
             </a>
             <div class="dropdown-divider"></div>
             <div class="card-body box-profile">
               <button type="button" class="btn btn-default float-left" data-toggle="modal" data-target="#modal-lg2">Password</button>
-              <button type="button" class="btn btn-default bg-gradient-info float-right" onclick="return confirm('Konfirmasi Logout !')">Logout</button>
+              <button type="button" class="btn btn-default bg-gradient-info float-right" onclick="logout()">Logout</button>
             </div>
           </div>
         </li>
@@ -78,23 +78,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <div class="content">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            <div class="card card-primary card-outline">
-              <div class="card-body">
-                <h5 class="card-title">Description</h5>
-                <p class="card-text">
-                  $ 1,000,000
-                </p>
-                <code>2022-11-30</code>
-                <br>
-                <span class="badge bg-info">status</span>
-                <span class="badge bg-success">status</span>
-                <span class="badge bg-danger">status</span>
-              </div>
-            </div>
-            <!-- /.card -->
-          </div>
+        <div class="row" id="listorder">
+          
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -139,11 +124,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="modal-body">
             <div class="form-group">
               <label>New Password</label>
-              <input type="text" class="form-control" placeholder="Enter New Password...">
-              </div>
+              <input id="password" type="password" class="form-control" placeholder="Enter New Password...">
+            </div>
+            <div class="form-group">
+              <label>Confirm New Password</label>
+              <input id="password_confirmation" type="password" class="form-control" placeholder="Confirm New Password...">
+            </div>
           </div>
           <div class="modal-footer justify-content-between">
-            <button type="button" class="btn btn-default">Submit</button>
+            <button type="button" class="btn btn-default" id="btn-update-password" onclick="requestUpdatePassword()">Update</button>
           </div>
         </div>
         <!-- /.modal-content -->
@@ -181,5 +170,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="https://adminlte.io/themes/v3/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="https://adminlte.io/themes/v3/dist/js/adminlte.min.js"></script>
+<script src="history.js"></script>
 </body>
 </html>

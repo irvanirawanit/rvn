@@ -1,12 +1,17 @@
 const title = 'RVN';
 const titlespace = 'R V N';
 const description = 'RVN Pulsa';
-const url = 'http://localhost:9090/';
+const url = 'http://47.250.40.102:9090/';
 
 // innerHTML every class
 const titleClass = document.getElementsByClassName('title').innerHTML = title;
 const titlespaceClass = document.getElementsByClassName('title-space').innerHTML = titlespace;
 const descriptionClass = document.getElementsByClassName('description').innerHTML = description;
+
+// javascript document ready without jquery
+document.addEventListener("DOMContentLoaded", function(event) {
+    document.getElementById('profile-username').innerHTML = localStorage.getItem('phone_number');
+});
 
 // dinamis title tag
 document.title = description;
