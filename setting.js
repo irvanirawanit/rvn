@@ -10,7 +10,10 @@ const descriptionClass = document.getElementsByClassName('description').innerHTM
 
 // javascript document ready without jquery
 document.addEventListener("DOMContentLoaded", function(event) {
-    document.getElementById('profile-username').innerHTML = localStorage.getItem('phone_number');
+    var elpu = document.getElementById('profile-username');
+    if(elpu){
+        elpu.innerHTML = localStorage.getItem('username');
+    }
 });
 
 // dinamis title tag

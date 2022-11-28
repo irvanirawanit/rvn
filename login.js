@@ -60,7 +60,7 @@ function loginPassword(){
 
 function loginRequestOtp(){
     // get value from input
-    const phone_number = document.getElementById('phone_number').value;
+    const phone_number = document.getElementById('phone_number_login_otp').value;
     if(phone_number.length == 0){
         alert('Please enter your phone number');
         return;
@@ -108,7 +108,7 @@ function loginRequestOtp(){
 
 function loginOtpConfirm(){
     // get value from input
-    const phone_number = document.getElementById('phone_number').value;
+    const phone_number = document.getElementById('phone_number_login_otp').value;
     const otp = document.getElementById('otp').value;
     if(phone_number.length == 0){
         alert('Please enter your phone number');
